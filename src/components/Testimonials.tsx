@@ -42,7 +42,7 @@ const Testimonials = () => {
             transition={{ duration: 0.8, delay: index * 0.2 }}
             className="relative"
           >
-            <Quote className="absolute -top-10 -left-6 text-accent/20" size={80} />
+            <Quote className="absolute -top-8 -left-4 md:-top-10 md:-left-6 text-accent/20 w-12 h-12 md:w-20 md:h-20" />
             <div className="relative z-10">
               <p className="text-xl italic text-primary leading-relaxed mb-8">
                 &quot;{item.quote}&quot;

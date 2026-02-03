@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -42,32 +43,47 @@ const Navbar = () => {
         <button
           className="md:hidden text-primary"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Nav */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-b border-border py-4 px-6 flex flex-col gap-4 animate-in slide-in-from-top duration-300">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-lg font-medium text-primary"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Button className="w-full" onClick={() => {
-            setIsOpen(false);
-            window.location.href = "#contact";
-          }}>
-            Contact Us
-          </Button>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden bg-white border-b border-border overflow-hidden"
+          >
+            <div className="py-6 px-6 flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-xl font-semibold text-primary"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Button
+                className="w-full py-6 text-lg"
+                onClick={() => {
+                  setIsOpen(false);
+                  window.location.href = "#contact";
+                }}
+              >
+                Contact Us
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
