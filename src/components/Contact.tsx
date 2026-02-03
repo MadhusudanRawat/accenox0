@@ -28,7 +28,7 @@ const Contact = () => {
               </div>
               <div>
                 <p className="text-xs text-white/50 uppercase tracking-widest font-bold">Email Us</p>
-                <p className="text-lg">hello@accenox.com</p>
+                <p className="text-lg">connect@accenox.com</p>
               </div>
             </div>
 

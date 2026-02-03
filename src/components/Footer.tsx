@@ -37,7 +37,7 @@ const Footer = () => {
         <div>
           <h4 className="font-bold text-primary mb-4">Contact</h4>
           <ul className="flex flex-col gap-2">
-            <li className="text-muted text-sm italic">hello@accenox.com</li>
+            <li className="text-muted text-sm italic">connect@accenox.com</li>
             <li className="text-muted text-sm">San Francisco, CA</li>
           </ul>
         </div>
