@@ -35,34 +35,36 @@ const Services = () => {
   ];
 
   return (
-    <SectionWrapper id="services">
+    <SectionWrapper id="services" className="bg-secondary/30">
       <SectionHeading
-        title="Our Services"
-        subtitle="Comprehensive digital solutions tailored to your unique business needs."
+        title="Expertise"
+        subtitle="We combine technical mastery with business intuition to build solutions that drive results."
         centered
       />
 
-      <div className="max-w-4xl mx-auto flex flex-col gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((service, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="group flex flex-col md:flex-row items-center gap-6 p-2 pr-8 md:p-2 md:pr-10 rounded-3xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
-              <div className={`w-full md:w-32 h-32 ${service.color} flex items-center justify-center rounded-2xl shrink-0`}>
+            <Card className="group h-full p-10 flex flex-col hover:border-accent/40 bg-white">
+              <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center text-accent mb-8 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-primary/20">
                 {service.icon}
               </div>
-              <div className="flex-1 py-4 px-6 md:px-0">
-                <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">{service.title}</h3>
-                <p className="text-muted leading-relaxed text-sm md:text-base">
-                  {service.description}
-                </p>
-              </div>
-              <div className="hidden md:flex p-3 rounded-full bg-secondary text-muted group-hover:bg-accent group-hover:text-primary transition-colors">
-                <ArrowUpRight size={20} />
+              <h3 className="text-2xl font-bold mb-4 flex items-center justify-between">
+                {service.title}
+                <ArrowUpRight size={20} className="text-muted opacity-0 group-hover:opacity-100 group-hover:text-accent transition-all" />
+              </h3>
+              <p className="text-muted leading-relaxed font-medium">
+                {service.description}
+              </p>
+
+              <div className="mt-auto pt-8 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary/40 group-hover:text-accent transition-colors">
+                Explore Solution <div className="h-px flex-1 bg-border group-hover:bg-accent/20"></div>
               </div>
             </Card>
           </motion.div>

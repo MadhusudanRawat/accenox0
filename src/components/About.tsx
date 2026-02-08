@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
 import { Target, Eye, Shield } from "lucide-react";
 
 const About = () => {
@@ -26,49 +25,61 @@ const About = () => {
   ];
 
   return (
-    <SectionWrapper id="about" className="bg-secondary/50">
-      <SectionHeading
-        title="About Accenox"
-        subtitle="We are a team of dedicated engineers and designers focused on building the future of business automation."
-        centered
-      />
+    <SectionWrapper id="about" className="bg-white">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <SectionHeading
+            title="Engineered for the Modern Era"
+            subtitle="Accenox is more than a software agency. We are a strategic technical partner for companies that refuse to be limited by their infrastructure."
+            className="mb-12"
+          />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {highlights.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Card className="h-full flex flex-col items-center text-center p-8">
-              <div className="mb-6 p-3 rounded-2xl bg-accent/10 border border-accent/20">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-              <p className="text-muted leading-relaxed">
-                {item.description}
-              </p>
-            </Card>
-          </motion.div>
-        ))}
+          <div className="space-y-8">
+            {highlights.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex gap-6 items-start"
+              >
+                <div className="p-3 rounded-2xl bg-secondary border border-border shrink-0">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-1">{item.title}</h3>
+                  <p className="text-muted text-sm leading-relaxed max-w-md">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative aspect-square md:aspect-video lg:aspect-square bg-primary rounded-5xl overflow-hidden p-12 flex flex-col justify-end group"
+        >
+          {/* Decorative background pattern */}
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,var(--color-accent)_0%,transparent_50%)]"></div>
+          <div className="absolute top-12 right-12 w-24 h-24 border border-white/20 rounded-full flex items-center justify-center text-white/40 group-hover:text-accent group-hover:border-accent transition-all duration-500">
+             <Target size={40} />
+          </div>
+
+          <div className="relative z-10">
+            <h3 className="text-4xl font-bold text-white mb-6 leading-tight">Built for <br /><span className="text-accent italic">Exceptional</span> Scale</h3>
+            <p className="text-white/70 text-lg leading-relaxed">
+              We bridge the gap between complex business requirements and elegant digital execution.
+              Our focus is on long-term scalability and measurable outcomes.
+            </p>
+          </div>
+        </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-20 p-8 md:p-12 bg-primary rounded-3xl text-white text-center"
-      >
-        <h3 className="text-2xl md:text-3xl font-bold mb-6">Built for Scale</h3>
-        <p className="text-white/80 max-w-3xl mx-auto text-lg leading-relaxed">
-          Founded on the principle that technology should be an enabler, not a hurdle.
-          Accenox bridges the gap between complex business requirements and elegant digital execution.
-          We don&apos;t just write code; we solve business problems.
-        </p>
-      </motion.div>
     </SectionWrapper>
   );
 };

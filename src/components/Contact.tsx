@@ -4,107 +4,81 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { Mail, MessageSquare, Phone, MapPin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   return (
     <SectionWrapper id="contact" className="bg-primary overflow-hidden relative">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 -skew-x-12 translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_70%)] opacity-10 blur-[100px] pointer-events-none"></div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
-        <div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to scale your business?
-          </h2>
-          <p className="text-white/70 text-lg mb-10 max-w-md">
-            Schedule a free consultation with our experts and discover how we can help you automate and grow.
+      <div className="flex flex-col lg:flex-row gap-20 relative z-10 items-center">
+        <div className="lg:w-1/2">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tighter leading-none"
+          >
+            Let&apos;s build <br /><span className="text-accent italic">something</span> great.
+          </motion.h2>
+          <p className="text-white/60 text-xl mb-12 max-w-lg font-medium">
+            Strategic technical partnership for companies looking to lead their industry through technology.
           </p>
 
-          <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-4 text-white">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                <Mail size={20} className="text-accent" />
-              </div>
-              <div>
-                <p className="text-xs text-white/50 uppercase tracking-widest font-bold">Email Us</p>
-                <p className="text-lg">hello@accenox.com</p>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
+              <p className="text-xs text-accent uppercase tracking-widest font-black mb-2">General Inquiries</p>
+              <p className="text-white font-bold">hello@accenox.com</p>
             </div>
-
-            <div className="flex items-center gap-4 text-white">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                <Phone size={20} className="text-accent" />
-              </div>
-              <div>
-                <p className="text-xs text-white/50 uppercase tracking-widest font-bold">Call Us</p>
-                <p className="text-lg">+1 (555) 123-4567</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 text-white">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
-                <MapPin size={20} className="text-accent" />
-              </div>
-              <div>
-                <p className="text-xs text-white/50 uppercase tracking-widest font-bold">Visit Us</p>
-                <p className="text-lg">San Francisco, CA</p>
-              </div>
+            <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
+              <p className="text-xs text-accent uppercase tracking-widest font-black mb-2">Call Our Office</p>
+              <p className="text-white font-bold">+1 (555) 123-4567</p>
             </div>
           </div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="lg:w-1/2 w-full"
         >
-          <Card className="p-8 md:p-10 bg-white border-none shadow-2xl">
-            <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm font-bold text-primary">Full Name</label>
+          <Card className="p-10 md:p-12 bg-white/5 border-white/10 backdrop-blur-xl shadow-2xl">
+            <form className="flex flex-col gap-8" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-3">
+                  <label htmlFor="name" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Full Name</label>
                   <input
                     type="text"
                     id="name"
-                    className="h-12 px-4 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
+                    className="h-14 px-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all font-medium"
                     placeholder="John Doe"
                   />
                 </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm font-bold text-primary">Work Email</label>
+                <div className="flex flex-col gap-3">
+                  <label htmlFor="email" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Work Email</label>
                   <input
                     type="email"
                     id="email"
-                    className="h-12 px-4 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all"
+                    className="h-14 px-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all font-medium"
                     placeholder="john@company.com"
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="subject" className="text-sm font-bold text-primary">Subject</label>
-                <select
-                  id="subject"
-                  className="h-12 px-4 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all bg-white"
-                >
-                  <option>Automation Consultation</option>
-                  <option>Custom Software Development</option>
-                  <option>Web/Mobile App Project</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="message" className="text-sm font-bold text-primary">Message</label>
+
+              <div className="flex flex-col gap-3">
+                <label htmlFor="message" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Your Vision</label>
                 <textarea
                   id="message"
                   rows={4}
-                  className="p-4 rounded-xl border border-border focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all resize-none"
-                  placeholder="Tell us about your project..."
+                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all resize-none font-medium"
+                  placeholder="Describe the challenge you're looking to solve..."
                 ></textarea>
               </div>
-              <Button type="submit" size="lg" className="w-full gap-2">
-                Send Message <MessageSquare size={20} />
+              <Button type="submit" size="lg" variant="secondary" className="w-full h-16 text-lg tracking-tight">
+                Send Message <ArrowUpRight size={20} className="ml-2" />
               </Button>
             </form>
           </Card>

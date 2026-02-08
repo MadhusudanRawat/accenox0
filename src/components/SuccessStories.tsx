@@ -29,34 +29,34 @@ const SuccessStories = () => {
   ];
 
   return (
-    <SectionWrapper id="success" className="bg-secondary/30">
+    <SectionWrapper id="success" className="bg-white">
       <SectionHeading
-        title="Client Success"
-        subtitle="Real-world results delivered for businesses looking to scale their impact."
+        title="Impact"
+        subtitle="Tangible results delivered through technical excellence and strategic automation."
         centered
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {cases.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.7, delay: index * 0.15 }}
           >
-            <Card className="h-full flex flex-col p-8 bg-white border-border/50 shadow-sm hover:shadow-xl hover:-translate-y-2">
-              <div className="flex items-center gap-2 text-accent font-bold text-sm mb-4">
-                <BadgeCheck size={18} />
+            <Card className="h-full flex flex-col p-10 bg-secondary/20 border-border/40 hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+              <div className="inline-flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-widest mb-6">
+                <BadgeCheck size={16} />
                 {item.result}
               </div>
-              <h3 className="text-xl font-bold mb-4">{item.company}</h3>
-              <p className="text-muted text-sm leading-relaxed mb-6 flex-1">
-                {item.description}
+              <h3 className="text-2xl font-bold mb-4 text-primary">{item.company}</h3>
+              <p className="text-muted/80 leading-relaxed mb-10 flex-1 font-medium italic text-lg">
+                &quot;{item.description}&quot;
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mt-auto">
                 {item.tags.map(tag => (
-                  <span key={tag} className="px-3 py-1 bg-secondary text-primary text-[10px] uppercase tracking-widest font-bold rounded-full">
+                  <span key={tag} className="px-4 py-1.5 bg-primary/5 text-primary text-[10px] uppercase tracking-[0.2em] font-black rounded-full border border-primary/5">
                     {tag}
                   </span>
                 ))}

@@ -26,20 +26,20 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-extrabold tracking-tight text-primary mb-6 max-w-4xl"
+          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-primary mb-8 max-w-5xl leading-[0.9]"
         >
-          Simplifying Complexity. <br />
-          <span className="text-muted">Automating Growth.</span>
+          Simplifying <span className="text-accent italic">Scale.</span> <br />
+          <span className="opacity-40">Automating Impact.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl text-muted mb-10 max-w-2xl"
+          className="text-lg md:text-xl text-muted/80 mb-12 max-w-xl leading-relaxed font-medium"
         >
-          Accenox builds scalable digital solutions that streamline workflows
-          and empower businesses to focus on what matters most.
+          We build the digital infrastructure that enables startups and enterprises
+          to move faster, operate smarter, and scale without friction.
         </motion.p>
 
         <motion.div
@@ -57,9 +57,9 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Decorative element - Liinks-like background subtle block */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 opacity-10">
-        <div className="w-[600px] h-[600px] bg-accent rounded-full blur-[120px]"></div>
+      {/* Decorative element - Framer-style background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full max-w-6xl aspect-square opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_70%)] blur-[120px]"></div>
       </div>
     </SectionWrapper>
   );

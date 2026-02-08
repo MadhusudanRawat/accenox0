@@ -17,8 +17,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 md:px-24 flex items-center justify-between h-20">
+    <nav className="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-xl border-b border-border/40">
+      <div className="max-w-7xl mx-auto px-6 sm:px-12 md:px-24 flex items-center justify-between h-16">
         <Link href="/" className="text-2xl font-bold tracking-tighter text-primary">
           ACCENOX
         </Link>
