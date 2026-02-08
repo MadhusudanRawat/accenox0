@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
@@ -9,12 +8,10 @@ import { SuccessStories } from "@/components/SuccessStories";
 import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative">
-      <Navbar />
+    <main className="min-h-screen relative pt-20 md:pt-32">
       <Hero />
       <About />
       <Services />
@@ -25,7 +22,6 @@ export default function Home() {
       <Testimonials />
       <Pricing />
       <Contact />
-      <Footer />
     </main>
   );
 }

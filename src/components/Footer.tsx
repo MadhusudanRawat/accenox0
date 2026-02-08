@@ -39,9 +39,9 @@ const Footer = () => {
             <div className="space-y-8">
               <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-primary/30">Platform</h4>
               <ul className="flex flex-col gap-4">
-                {["About", "Services", "Solutions", "Process"].map(item => (
+                {["About", "Services", "Solutions", "Process", "Portfolio"].map(item => (
                   <li key={item}>
-                    <Link href={`#${item.toLowerCase()}`} className="group flex items-center gap-1 text-primary/80 font-bold hover:text-accent transition-colors">
+                    <Link href={item === "Portfolio" ? "/portfolio" : `/#${item.toLowerCase()}`} className="group flex items-center gap-1 text-primary/80 font-bold hover:text-accent transition-colors">
                       {item}
                       <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                     </Link>

@@ -10,10 +10,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Solutions", href: "#solutions" },
-    { name: "Process", href: "#process" },
+    { name: "About", href: "/#about" },
+    { name: "Services", href: "/#services" },
+    { name: "Solutions", href: "/#solutions" },
+    { name: "Process", href: "/#process" },
+    { name: "Portfolio", href: "/portfolio" },
   ];
 
   return (
@@ -35,7 +36,7 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="ml-4 pr-1">
-            <Button size="sm" className="rounded-full px-6 font-bold" onClick={() => window.location.href = "#contact"}>
+            <Button size="sm" className="rounded-full px-6 font-bold" onClick={() => window.location.href = "/#contact"}>
               Contact Us
             </Button>
           </div>
@@ -89,7 +90,7 @@ const Navbar = () => {
                   className="w-full py-8 text-xl rounded-2xl font-bold"
                   onClick={() => {
                     setIsOpen(false);
-                    window.location.href = "#contact";
+                    window.location.href = "/#contact";
                   }}
                 >
                   Contact Us
