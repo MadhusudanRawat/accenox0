@@ -19,7 +19,7 @@ const SectionWrapper = ({
       className={cn("py-24 md:py-32 lg:py-40 px-6 sm:px-12 md:px-24", className)}
       {...props}
     >
-      <div className={cn("max-w-7xl mx-auto", containerClassName)}>
+      <div className={cn("w-full max-w-7xl mx-auto", containerClassName)}>
         {children}
       </div>
     </section>

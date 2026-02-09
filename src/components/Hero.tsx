@@ -16,21 +16,21 @@ const Hero = () => {
       <div className="absolute top-1/4 -left-20 w-64 h-64 bg-green-500/20 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-green-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="flex flex-col items-start text-left max-w-6xl mx-auto w-full">
+      <div className="flex flex-col items-start text-left max-w-full md:max-w-6xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="text-5xl md:text-[80px] lg:text-[100px] font-bold tracking-tight text-white mb-8 leading-[1.1] md:leading-[1] lg:leading-[0.9]"
+          className="w-full text-[clamp(1.75rem,8vw,6.25rem)] font-bold tracking-tighter text-white mb-8 leading-[1.1] md:leading-[1] lg:leading-[0.9] text-balance"
         >
-          We help businesses make <br className="hidden md:block" /> more revenue with <br className="hidden md:block" /> strategy-led websites
+          We help businesses make <br className="hidden md:inline" /> more revenue with <br className="hidden md:inline" /> strategy-led websites
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="text-lg md:text-xl text-white/70 mb-12 max-w-3xl leading-relaxed font-normal"
+          className="text-[clamp(1rem,2.5vw,1.25rem)] text-white/70 mb-12 max-w-3xl leading-relaxed font-normal text-balance"
         >
           We design and build websites, landing pages, and marketing assets that drive sales
           and qualified leads without hiring a full in-house team.
