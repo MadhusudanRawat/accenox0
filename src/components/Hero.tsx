@@ -3,50 +3,34 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { SectionWrapper } from "@/components/SectionWrapper";
-import { ArrowRight, Star } from "lucide-react";
 
 const clients = [
-  "TechFlow Systems", "BrightMedia", "Elevate SaaS", "GrowthEngine", "Nexus Labs",
-  "FinEdge", "Aura Creative", "ScaleUp", "Vanguard", "Mosaic"
+  "Ella AI", "Khushiva", "Ninja WB", "Prestige DWR", "AE Creatives", "Upsync Media", "Thryve Collective", "Slyte", "Taru St",
+  "BrightMedia", "Elevate SaaS", "GrowthEngine", "Nexus Labs", "FinEdge", "Aura Creative", "ScaleUp"
 ];
 
 const Hero = () => {
   return (
-    <SectionWrapper className="pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
-      <div className="flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary/70 text-sm font-medium mb-8"
-        >
-          <div className="flex -space-x-1">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="w-5 h-5 rounded-full border-2 border-white bg-gray-200" />
-            ))}
-          </div>
-          <span className="flex items-center gap-1">
-            <Star size={14} className="fill-yellow-400 text-yellow-400" />
-            Trusted by 32+ agencies & businesses
-          </span>
-        </motion.div>
+    <SectionWrapper className="min-h-screen flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-black relative">
+      {/* Background Glows */}
+      <div className="absolute top-1/4 -left-20 w-64 h-64 bg-green-500/20 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-green-500/10 rounded-full blur-[120px] pointer-events-none"></div>
 
+      <div className="flex flex-col items-start text-left max-w-6xl mx-auto w-full">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-primary mb-8 max-w-5xl leading-[1.05]"
+          className="text-5xl md:text-[80px] lg:text-[100px] font-bold tracking-tight text-white mb-8 leading-[1.1] md:leading-[1] lg:leading-[0.9]"
         >
-          We help businesses make <br />
-          <span className="font-serif italic text-accent">more revenue</span> with <br />
-          strategy-led websites
+          We help businesses make <br className="hidden md:block" /> more revenue with <br className="hidden md:block" /> strategy-led websites
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="text-lg md:text-xl text-muted/90 mb-12 max-w-3xl leading-relaxed font-normal"
+          className="text-lg md:text-xl text-white/70 mb-12 max-w-3xl leading-relaxed font-normal"
         >
           We design and build websites, landing pages, and marketing assets that drive sales
           and qualified leads without hiring a full in-house team.
@@ -60,51 +44,61 @@ const Hero = () => {
         >
           <Button
             size="lg"
-            className="h-14 px-8 text-base rounded-full gap-2 shadow-lg shadow-accent/20"
+            className="h-16 px-10 text-lg rounded-full font-bold bg-[#22c55e] hover:bg-[#16a34a] text-black border-none"
             onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
           >
-            Book a Consultation <ArrowRight size={18} />
+            Book an Intro Call
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="h-14 px-8 text-base rounded-full border-gray-200 hover:bg-gray-50"
+            className="h-16 px-10 text-lg rounded-full font-bold border-white/20 bg-white/5 text-white hover:bg-white/10"
             onClick={() => {
-              const el = document.getElementById("services");
-              el?.scrollIntoView({ behavior: "smooth" });
+              const el = document.getElementById("portfolio");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+              } else {
+                window.location.href = "/portfolio";
+              }
             }}
           >
-            View Our Services
+            View Case Studies
           </Button>
         </motion.div>
 
-        {/* Client Marquee */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="w-full relative py-8 border-y border-gray-100"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="flex flex-col gap-6"
         >
-          <div className="flex overflow-hidden group">
-            <div className="flex space-x-12 animate-marquee group-hover:pause-marquee py-2 whitespace-nowrap">
+          <p className="text-white/60 text-lg font-medium">
+            Trusted by 32+ agencies, businesses, and founders worldwide
+          </p>
+
+          <div className="relative flex overflow-hidden w-full opacity-50">
+            <motion.div
+              className="flex whitespace-nowrap gap-12"
+              animate={{ x: [0, -1000] }}
+              transition={{
+                duration: 30,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
               {[...clients, ...clients].map((client, i) => (
                 <span
                   key={i}
-                  className="text-lg md:text-xl font-semibold text-primary/20 uppercase tracking-widest hover:text-primary/40 transition-colors"
+                  className="text-lg md:text-xl font-bold text-white"
                 >
                   {client}
                 </span>
               ))}
-            </div>
+            </motion.div>
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10"></div>
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10"></div>
           </div>
         </motion.div>
-      </div>
-
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full max-w-6xl aspect-[16/9] opacity-[0.03] pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-primary [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]">
-          <div className="h-full w-full border-[1px] border-primary/20 [mask-image:linear-gradient(to_bottom,black,transparent)]"></div>
-        </div>
       </div>
     </SectionWrapper>
   );

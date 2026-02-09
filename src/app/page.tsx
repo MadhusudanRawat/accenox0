@@ -11,7 +11,7 @@ import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen relative pt-20 md:pt-32">
+    <main className="min-h-screen relative">
       <Hero />
       <About />
       <Services />
