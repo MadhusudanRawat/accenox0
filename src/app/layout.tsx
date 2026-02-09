@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -8,6 +8,12 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} font-sans antialiased bg-white text-primary`}
+        className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased bg-white text-primary`}
       >
         <ScrollProgress />
         <Navbar />

@@ -3,63 +3,108 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { SectionWrapper } from "@/components/SectionWrapper";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
+
+const clients = [
+  "TechFlow Systems", "BrightMedia", "Elevate SaaS", "GrowthEngine", "Nexus Labs",
+  "FinEdge", "Aura Creative", "ScaleUp", "Vanguard", "Mosaic"
+];
 
 const Hero = () => {
   return (
-    <SectionWrapper className="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <SectionWrapper className="pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
       <div className="flex flex-col items-center text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium mb-6"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-primary/70 text-sm font-medium mb-8"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+          <div className="flex -space-x-1">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="w-5 h-5 rounded-full border-2 border-white bg-gray-200" />
+            ))}
+          </div>
+          <span className="flex items-center gap-1">
+            <Star size={14} className="fill-yellow-400 text-yellow-400" />
+            Trusted by 32+ agencies & businesses
           </span>
-          Modern Solutions for Modern Enterprises
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-primary mb-8 max-w-5xl leading-[0.9]"
+          transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}
+          className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight text-primary mb-8 max-w-5xl leading-[1.05]"
         >
-          Simplifying <span className="text-accent italic">Scale.</span> <br />
-          <span className="opacity-40">Automating Impact.</span>
+          We help businesses make <br />
+          <span className="font-serif italic text-accent">more revenue</span> with <br />
+          strategy-led websites
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-muted/80 mb-12 max-w-xl leading-relaxed font-medium"
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1.0] }}
+          className="text-lg md:text-xl text-muted/90 mb-12 max-w-3xl leading-relaxed font-normal"
         >
-          We build the digital infrastructure that enables startups and enterprises
-          to move faster, operate smarter, and scale without friction.
+          We design and build websites, landing pages, and marketing assets that drive sales
+          and qualified leads without hiring a full in-house team.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4"
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1.0] }}
+          className="flex flex-col sm:flex-row gap-4 mb-20"
         >
-          <Button size="lg" className="gap-2" onClick={() => window.location.href = "#contact"}>
-            Book a Consultation <ArrowRight size={20} />
+          <Button
+            size="lg"
+            className="h-14 px-8 text-base rounded-full gap-2 shadow-lg shadow-accent/20"
+            onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
+          >
+            Book a Consultation <ArrowRight size={18} />
           </Button>
-          <Button size="lg" variant="outline" onClick={() => window.location.href = "#services"}>
+          <Button
+            size="lg"
+            variant="outline"
+            className="h-14 px-8 text-base rounded-full border-gray-200 hover:bg-gray-50"
+            onClick={() => {
+              const el = document.getElementById("services");
+              el?.scrollIntoView({ behavior: "smooth" });
+            }}
+          >
             View Our Services
           </Button>
         </motion.div>
+
+        {/* Client Marquee */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="w-full relative py-8 border-y border-gray-100"
+        >
+          <div className="flex overflow-hidden group">
+            <div className="flex space-x-12 animate-marquee group-hover:pause-marquee py-2 whitespace-nowrap">
+              {[...clients, ...clients].map((client, i) => (
+                <span
+                  key={i}
+                  className="text-lg md:text-xl font-semibold text-primary/20 uppercase tracking-widest hover:text-primary/40 transition-colors"
+                >
+                  {client}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
 
-      {/* Decorative element - Framer-style background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full max-w-6xl aspect-square opacity-20 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_70%)] blur-[120px]"></div>
+      {/* Decorative background elements */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 w-full max-w-6xl aspect-[16/9] opacity-[0.03] pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-primary [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]">
+          <div className="h-full w-full border-[1px] border-primary/20 [mask-image:linear-gradient(to_bottom,black,transparent)]"></div>
+        </div>
       </div>
     </SectionWrapper>
   );
