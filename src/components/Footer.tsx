@@ -3,7 +3,7 @@ import { Linkedin, Twitter, Github, ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black pt-32 pb-16 px-6 sm:px-12 md:px-24 border-t border-white/5 overflow-hidden text-white">
+    <footer className="bg-black pt-32 pb-16 px-6 sm:px-12 md:px-24 border-t border-white/5 overflow-hidden text-white bg-grain">
       <div className="max-w-7xl mx-auto relative">
         {/* Background Decorative Element */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
@@ -15,7 +15,7 @@ const Footer = () => {
               ACCENOX
             </Link>
             <p className="mt-8 text-xl text-white/60 font-medium leading-relaxed max-w-md">
-              Engineering the digital infrastructure that empowers ambitious companies to lead their industries.
+              Architecting the resilient digital cores and automated ecosystems that power industry-leading enterprises.
             </p>
             <div className="flex gap-4 mt-10">
               {[

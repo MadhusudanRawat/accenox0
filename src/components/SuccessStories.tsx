@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card } from "@/components/ui/Card";
@@ -9,41 +9,65 @@ import { BadgeCheck } from "lucide-react";
 const SuccessStories = () => {
   const cases = [
     {
-      company: "FinTech Pro",
-      result: "40% Increase in Productivity",
-      description: "Implemented an automated document processing system that reduced manual data entry by 90%.",
-      tags: ["Automation", "Custom SaaS"]
+      company: "Global Finance Corp",
+      result: "90% Reduction in Processing Time",
+      description: "Architected an automated document ingestion engine that transformed 12-hour manual workflows into 5-minute automated cycles.",
+      tags: ["Automation", "Enterprise Core"]
     },
     {
-      company: "HealthCore",
-      result: "Seamless Mobile Integration",
-      description: "Developed a secure, HIPAA-compliant patient portal that serves over 50,000 active monthly users.",
-      tags: ["Mobile App", "Compliance"]
+      company: "NovaHealth Ecosystem",
+      result: "150% Increase in User Engagement",
+      description: "Developed a secure, cloud-native patient portal that scaled from 1k to 50k active monthly users with zero downtime.",
+      tags: ["Mobile Ecosystem", "Cloud Arch"]
     },
     {
-      company: "EcoLogistics",
-      result: "Real-time Supply Chain Visibility",
-      description: "Built a custom dashboard that integrates 15+ data sources for real-time tracking and analytics.",
-      tags: ["Web Dev", "Integrations"]
+      company: "LogiStream Analytics",
+      result: "Unified Data Synchronicity",
+      description: "Integrated 15 legacy APIs into a unified real-time telemetry dashboard, providing a single source of truth for global logistics.",
+      tags: ["Data Engineering", "Integrations"]
     }
   ];
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
 
   return (
     <SectionWrapper id="success" className="bg-white">
       <SectionHeading
-        title="Impact"
-        subtitle="Tangible results delivered through technical excellence and strategic automation."
+        title="Operational Impact."
+        subtitle="Tangible business outcomes delivered through technical excellence and strategic workflow automation."
         centered
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
         {cases.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: index * 0.15 }}
+            variants={itemVariants}
           >
             <Card className="h-full flex flex-col p-10 bg-secondary/20 border-border/40 hover:bg-white hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
               <div className="inline-flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-widest mb-6">
@@ -64,7 +88,7 @@ const SuccessStories = () => {
             </Card>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </SectionWrapper>
   );
 };

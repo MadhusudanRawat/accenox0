@@ -1,0 +1,15 @@
+
+> accenox-website@0.1.0 dev
+> next dev -p 5003
+
+   ▲ Next.js 15.2.9
+   - Local:        http://localhost:5003
+   - Network:      http://192.168.0.2:5003
+
+ ✓ Starting...
+ ✓ Ready in 1947ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3.1s (1658 modules)
+ GET / 200 in 3950ms
+ GET / 200 in 242ms
+[?25h
