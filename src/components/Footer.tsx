@@ -93,11 +93,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Massive Background Text */}
-        <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 pointer-events-none select-none opacity-50">
-          <span className="text-[18vw] font-black text-white/[0.02] leading-none tracking-tighter">
+        {/* Massive Footer Text */}
+        <div className="mt-24 relative flex flex-col items-center justify-center overflow-hidden">
+          {/* Purple Glow Effect */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-80 bg-violet-600/20 rounded-full blur-[120px] pointer-events-none -mb-20" />
+
+          <div className="text-[15vw] font-black bg-gradient-to-b from-white/20 to-white/[0.05] bg-clip-text text-transparent leading-none tracking-tighter select-none z-10 uppercase transition-all duration-700 hover:from-white/30">
             ACCENOX
-          </span>
+          </div>
         </div>
       </div>
     </footer>
