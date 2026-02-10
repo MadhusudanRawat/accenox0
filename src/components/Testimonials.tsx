@@ -8,27 +8,27 @@ import { Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Accenox didn't just automate our processes; they re-engineered our operational DNA. We've achieved a level of scalability we previously thought was impossible.",
-      author: "David Vance",
-      role: "COO, Global Finance Corp"
+      quote: "Accenox transformed our chaotic workflow into a well-oiled machine. Their automation expertise is second to none.",
+      author: "Sarah Jenkins",
+      role: "COO, FinTech Pro"
     },
     {
-      quote: "The depth of technical mastery at Accenox is exceptional. They bridge the gap between business strategy and digital execution with surgical precision.",
-      author: "Dr. Aris Thorne",
-      role: "Founder, NovaHealth"
+      quote: "The team at Accenox doesn't just build apps; they build business solutions. Professional, responsive, and highly skilled.",
+      author: "Michael Chen",
+      role: "Founder, HealthCore"
     },
     {
-      quote: "Their approach to systems architecture is truly forward-thinking. Our infrastructure is now a competitive advantage rather than a maintenance burden.",
-      author: "Marcus Frey",
-      role: "CTO, LogiStream"
+      quote: "Working with Accenox felt like having an elite technical team in-house. They delivered beyond our expectations.",
+      author: "Elena Rodriguez",
+      role: "CTO, EcoLogistics"
     }
   ];
 
   return (
     <SectionWrapper id="testimonials">
       <SectionHeading
-        title="Technical Validation."
-        subtitle="Insights from the leaders and visionaries we've empowered with elite engineering."
+        title="Trusted by Leaders"
+        subtitle="Don't just take our word for it. Here's what our partners have to say."
         centered
       />
 

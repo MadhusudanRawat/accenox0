@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   return (
-    <SectionWrapper id="contact" className="bg-primary overflow-hidden relative bg-grain">
+    <SectionWrapper id="contact" className="bg-primary overflow-hidden relative">
       {/* Decorative background elements */}
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_70%)] opacity-10 blur-[100px] pointer-events-none"></div>
 
@@ -18,12 +18,12 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tighter leading-[0.9]"
+            className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tighter leading-none"
           >
-            Engineer <br /><span className="text-accent italic">the</span> Future.
+            Let&apos;s build <br /><span className="text-accent italic">something</span> great.
           </motion.h2>
-          <p className="text-white/60 text-xl md:text-2xl mb-12 max-w-lg font-medium leading-relaxed">
-            Align with an engineering partner that prioritizes your strategic velocity. Let&apos;s architect your next breakthrough.
+          <p className="text-white/60 text-xl mb-12 max-w-lg font-medium">
+            Strategic technical partnership for companies looking to lead their industry through technology.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">

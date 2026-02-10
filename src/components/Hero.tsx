@@ -11,7 +11,7 @@ const clients = [
 
 const Hero = () => {
   return (
-    <SectionWrapper id="hero" className="min-h-screen flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-black relative bg-grain">
+    <SectionWrapper className="min-h-screen flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-black relative">
       {/* Background Glows */}
       <div className="absolute top-1/4 -left-20 w-64 h-64 bg-green-500/20 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-green-500/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -20,19 +20,20 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full text-[clamp(2rem,8.5vw,6.5rem)] font-bold tracking-tighter text-white mb-8 leading-[1.05] md:leading-[1] lg:leading-[0.9] text-balance font-serif"
+          transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}
+          className="w-full text-[clamp(1.75rem,8vw,6.25rem)] font-bold tracking-tighter text-white mb-8 leading-[1.1] md:leading-[1] lg:leading-[0.9] text-balance"
         >
-          Engineering Digital <br className="hidden md:inline" /> Infrastructure for <br className="hidden md:inline" /> Global Leaders
+          We help businesses make <br className="hidden md:inline" /> more revenue with <br className="hidden md:inline" /> strategy-led websites
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[clamp(1.125rem,2.5vw,1.375rem)] text-white/60 mb-12 max-w-3xl leading-relaxed font-medium text-balance"
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1.0] }}
+          className="text-[clamp(1rem,2.5vw,1.25rem)] text-white/70 mb-12 max-w-3xl leading-relaxed font-normal text-balance"
         >
-          We architect custom software solutions that automate complex business processes and simplify enterprise workflows. From venture-backed startups to global enterprises, we build the technical core that powers scalable growth.
+          We design and build websites, landing pages, and marketing assets that drive sales
+          and qualified leads without hiring a full in-house team.
         </motion.p>
 
         <motion.div
@@ -43,15 +44,15 @@ const Hero = () => {
         >
           <Button
             size="lg"
-            variant="secondary"
+            className="h-16 px-10 text-lg rounded-full font-bold bg-[#22c55e] hover:bg-[#16a34a] text-black border-none"
             onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
           >
-            Book a Consultation
+            Book an Intro Call
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-white/20 bg-white/5 text-white hover:bg-white/10"
+            className="h-16 px-10 text-lg rounded-full font-bold border-white/20 bg-white/5 text-white hover:bg-white/10"
             onClick={() => {
               const el = document.getElementById("portfolio");
               if (el) {
@@ -61,7 +62,7 @@ const Hero = () => {
               }
             }}
           >
-            View Our Services
+            View Case Studies
           </Button>
         </motion.div>
 

@@ -19,20 +19,11 @@ const technologies = [
 
 const TechStack = () => {
   return (
-    <div className="py-24 bg-black/50 border-y border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 mb-16">
-        <div className="flex flex-col items-center text-center">
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: 60 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, ease: "circOut" }}
-            className="h-1 bg-accent mb-6 rounded-full"
-          />
-          <h2 className="text-sm font-black uppercase tracking-[0.3em] text-white/20">
-            Engineered with Precision
-          </h2>
-        </div>
+    <div className="py-20 bg-white border-y border-border/40 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 mb-12">
+        <h2 className="text-center text-sm font-bold uppercase tracking-[0.2em] text-muted">
+          Our Tech Stack
+        </h2>
       </div>
 
       <div className="flex relative overflow-hidden group">
@@ -51,7 +42,7 @@ const TechStack = () => {
           {[...technologies, ...technologies].map((tech, index) => (
             <div
               key={index}
-              className="text-4xl md:text-5xl font-extrabold text-white/5 hover:text-accent/40 transition-colors cursor-default select-none tracking-tighter"
+              className="text-4xl md:text-5xl font-extrabold text-primary/10 hover:text-accent/40 transition-colors cursor-default select-none tracking-tighter"
             >
               {tech}
             </div>
@@ -59,8 +50,8 @@ const TechStack = () => {
         </motion.div>
 
         {/* Faded edges for the marquee */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10"></div>
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10"></div>
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
       </div>
     </div>
   );
