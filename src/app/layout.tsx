@@ -16,11 +16,54 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-serif",
 });
 
+const siteUrl = "https://accenox.com";
+
 export const metadata: Metadata = {
-  title: "Accenox | Simplifying Workflows & Automating Business",
-  description: "Accenox provides scalable digital solutions, custom software development, and automation for startups and enterprises.",
-  keywords: ["Software Development", "Business Automation", "Web Development", "Mobile Apps", "Accenox"],
-  authors: [{ name: "Accenox" }],
+  metadataBase: new URL(siteUrl),
+  title: "Accenox | Strategy-Led Websites & Business Automation",
+  description: "Expert software development, custom web solutions, and business automation for startups and enterprises. Drive revenue with our strategy-led digital services.",
+  keywords: [
+    "Software Development",
+    "Web Development",
+    "Business Automation",
+    "Custom Software",
+    "Digital Solutions",
+    "Next.js Development",
+    "Web Design",
+    "SaaS Development",
+    "Mobile Apps",
+    "Accenox"
+  ],
+  authors: [{ name: "Accenox", url: siteUrl }],
+  creator: "Accenox",
+  publisher: "Accenox",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    title: "Accenox | Strategy-Led Websites & Business Automation",
+    description: "Expert software development, custom web solutions, and business automation for startups and enterprises.",
+    siteName: "Accenox",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Accenox | Strategy-Led Websites & Business Automation",
+    description: "Expert software development and business automation solutions.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
 export const viewport = {
@@ -33,8 +76,28 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Accenox",
+    url: siteUrl,
+    description: "Expert software development, custom web solutions, and business automation for startups and enterprises.",
+    sameAs: [],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "",
+      contactType: "Customer Service",
+    },
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased bg-white text-primary`}
       >
