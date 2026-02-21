@@ -29,11 +29,11 @@ const Contact = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
               <p className="text-xs text-accent uppercase tracking-widest font-black mb-2">General Inquiries</p>
-              <p className="text-white font-bold">hello@accenox.com</p>
+              <p className="text-white font-bold">connect@accenox.com</p>
             </div>
             <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
               <p className="text-xs text-accent uppercase tracking-widest font-black mb-2">Call Our Office</p>
-              <p className="text-white font-bold">+1 (555) 123-4567</p>
+              <p className="text-white font-bold">+91 7742832770</p>
             </div>
           </div>
         </div>

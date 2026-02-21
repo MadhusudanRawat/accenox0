@@ -54,8 +54,8 @@ const Footer = () => {
               <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/30">Contact</h4>
               <ul className="flex flex-col gap-4">
                 <li>
-                  <Link href="mailto:hello@accenox.com" className="text-white/80 font-bold hover:text-accent transition-colors break-words">
-                    hello@accenox.com
+                  <Link href="mailto:connect@accenox.com" className="text-white/80 font-bold hover:text-accent transition-colors break-words">
+                    connect@accenox.com
                   </Link>
                 </li>
                 <li className="text-white/80 font-bold">
