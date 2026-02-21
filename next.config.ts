@@ -39,7 +39,6 @@ const nextConfig: NextConfig = {
     ];
   },
   compress: true,
-  swcMinify: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
 };
