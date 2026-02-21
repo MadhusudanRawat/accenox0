@@ -20,11 +20,11 @@ const Pricing = () => {
   const [includeDesign, setIncludeDesign] = useState(false);
   const [includeExtraMarketing, setIncludeExtraMarketing] = useState(false);
 
-  const starterBasePrice = 10000;
-  const designPrice = 5000;
+  const starterBasePrice = 6000;
+  const designPrice = 700;
 
-  const growthBasePrice = 5000;
-  const marketingAddon = 1000;
+  const growthBasePrice = 2999;
+  const marketingAddon = 1499;
 
   return (
     <SectionWrapper id="pricing" className="bg-secondary/50">
@@ -160,7 +160,9 @@ const Pricing = () => {
               ))}
             </ul>
 
-            <Button className="w-full h-14 text-lg font-bold">Get in touch</Button>
+            <Button className="w-full h-14 text-lg font-bold"
+            onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
+            >Get in touch</Button>
           </Card>
         </div>
 
@@ -236,7 +238,9 @@ const Pricing = () => {
               )}
             </ul>
 
-            <Button variant="secondary" className="w-full h-14 text-lg font-bold">Get in touch</Button>
+            <Button variant="secondary" className="w-full h-14 text-lg font-bold"
+            onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
+            >Get in touch</Button>
           </Card>
         </div>
       </div>
