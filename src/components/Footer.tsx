@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Linkedin, Twitter, Github, ArrowUpRight } from "lucide-react";
+import { Linkedin, Twitter, Github } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black pt-32 pb-16 px-6 sm:px-12 md:px-24 border-t border-white/5 overflow-hidden text-white">
+    <footer className="bg-black pt-32 pb-16 px-6 sm:px-12 md:px-24 border-t border-white/5 overflow-hidden text-white bg-grain">
       <div className="max-w-7xl mx-auto relative">
         {/* Background Decorative Element */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
@@ -15,7 +15,7 @@ const Footer = () => {
               ACCENOX
             </Link>
             <p className="mt-8 text-xl text-white/60 font-medium leading-relaxed max-w-md">
-              Engineering the digital infrastructure that empowers ambitious companies to lead their industries.
+              Architecting the resilient digital cores and automated ecosystems that power industry-leading enterprises.
             </p>
             <div className="flex gap-4 mt-10">
               {[
@@ -35,47 +35,22 @@ const Footer = () => {
           </div>
 
           {/* Links Grid */}
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-12">
-            <div className="space-y-8">
-              <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/30">Platform</h4>
-              <ul className="flex flex-col gap-4">
-                {["About", "Services", "Solutions", "Process", "Portfolio"].map(item => (
-                  <li key={item}>
-                    <Link href={item === "Portfolio" ? "/portfolio" : `/#${item.toLowerCase()}`} className="group flex items-center gap-1 text-white/80 font-bold hover:text-accent transition-colors">
-                      {item}
-                      <ArrowUpRight size={14} className="opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-8">
-              <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/30">Contact</h4>
-              <ul className="flex flex-col gap-4">
-                <li>
-                  <Link href="mailto:connect@accenox.com" className="text-white/80 font-bold hover:text-accent transition-colors break-words">
-                    connect@accenox.com
-                  </Link>
-                </li>
-                <li className="text-white/80 font-bold">
-                  San Francisco, CA
-                </li>
-              </ul>
-            </div>
-
-            <div className="space-y-8 col-span-2 sm:col-span-1">
-              <h4 className="text-[11px] font-black uppercase tracking-[0.2em] text-white/30">Legal</h4>
-              <ul className="flex flex-col gap-4">
-                {["Privacy", "Terms", "Cookies"].map(item => (
-                  <li key={item}>
-                    <Link href="#" className="text-white/80 font-bold hover:text-accent transition-colors">
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="lg:col-span-7 flex flex-wrap gap-12 lg:justify-end">
+            <Link href="/portfolio" className="text-white/60 font-bold hover:text-white transition-colors">
+              Our Work
+            </Link>
+            <Link href="/#services" className="text-white/60 font-bold hover:text-white transition-colors">
+              Web Engineering Services
+            </Link>
+            <Link href="/#testimonials" className="text-white/60 font-bold hover:text-white transition-colors">
+              Wall of Love
+            </Link>
+            <Link href="/#pricing" className="text-white/60 font-bold hover:text-white transition-colors">
+              Pricing
+            </Link>
+            <Link href="/#contact" className="text-white/60 font-bold hover:text-white transition-colors">
+              Schedule a Call
+            </Link>
           </div>
         </div>
 

@@ -92,7 +92,7 @@ export default function PortfolioPage() {
     : projects.filter(p => p.category === activeCategory);
 
   return (
-    <main className="min-h-screen bg-white pt-32 pb-24">
+    <main className="min-h-screen bg-black pt-32 pb-24 bg-grain">
       <SectionWrapper>
         <div className="mb-16">
           <motion.div
@@ -100,15 +100,15 @@ export default function PortfolioPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-white text-[10px] font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-accent text-[10px] font-bold uppercase tracking-widest mb-6">
               <span className="w-1 h-1 rounded-full bg-accent animate-pulse"></span>
               Portfolio
               <span className="w-1 h-1 rounded-full bg-accent animate-pulse"></span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-primary tracking-tighter mb-6">
-              Selected Works.
+            <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6">
+              SELECTED <span className="text-accent italic">WORKS</span>.
             </h1>
-            <p className="text-xl text-muted font-medium max-w-2xl">
+            <p className="text-xl text-white/60 font-medium max-w-2xl">
               A showcase of our engineering excellence across diverse technologies and industries.
             </p>
           </motion.div>
@@ -118,7 +118,7 @@ export default function PortfolioPage() {
           {/* Sidebar Navigation */}
           <aside className="lg:w-64 shrink-0">
             <div className="lg:sticky lg:top-32 flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 no-scrollbar">
-              <h3 className="hidden lg:block text-[11px] font-black uppercase tracking-[0.2em] text-primary/30 mb-4 ml-4">Technologies</h3>
+              <h3 className="hidden lg:block text-[11px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 ml-4">Technologies</h3>
               {categories.map((cat) => (
                 <button
                   key={cat.id}
@@ -126,8 +126,8 @@ export default function PortfolioPage() {
                   className={cn(
                     "flex items-center gap-4 px-6 py-4 rounded-2xl font-bold transition-all text-left group whitespace-nowrap lg:whitespace-normal",
                     activeCategory === cat.id
-                      ? "bg-primary text-white shadow-xl shadow-primary/20 scale-105"
-                      : "text-primary/50 hover:bg-primary/[0.03] hover:text-primary bg-secondary/30 lg:bg-transparent"
+                      ? "bg-white text-black shadow-xl shadow-white/20 scale-105"
+                      : "text-white/50 hover:bg-white/[0.03] hover:text-white bg-white/5 lg:bg-transparent"
                   )}
                 >
                   <span className={cn(
@@ -181,10 +181,10 @@ export default function PortfolioPage() {
                         </div>
                       </div>
                       <div className="p-8">
-                        <h3 className="text-2xl font-black tracking-tight mb-3 group-hover:text-accent transition-colors">
+                    <h3 className="text-2xl font-black tracking-tight mb-3 text-white group-hover:text-accent transition-colors">
                           {project.title}
                         </h3>
-                        <p className="text-muted font-medium text-sm leading-relaxed">
+                    <p className="text-white/50 font-medium text-sm leading-relaxed">
                           {project.description}
                         </p>
                       </div>

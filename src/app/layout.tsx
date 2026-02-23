@@ -99,7 +99,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased bg-white text-primary`}
+        className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-foreground`}
       >
         <ScrollProgress />
         <Navbar />

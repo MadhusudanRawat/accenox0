@@ -1,88 +1,53 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import { ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   return (
-    <SectionWrapper id="contact" className="bg-primary overflow-hidden relative">
-      {/* Decorative background elements */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_70%)] opacity-10 blur-[100px] pointer-events-none"></div>
+    <SectionWrapper id="contact" className="bg-black py-24 md:py-40 overflow-hidden relative border-t border-white/10">
+      <div className="absolute inset-0 bg-accent/5 opacity-30 pointer-events-none blur-[120px] rounded-full translate-y-1/2"></div>
 
-      <div className="flex flex-col lg:flex-row gap-20 relative z-10 items-center">
-        <div className="lg:w-1/2">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tighter leading-none"
-          >
-            Let&apos;s build <br /><span className="text-accent italic">something</span> great.
-          </motion.h2>
-          <p className="text-white/60 text-xl mb-12 max-w-lg font-medium">
-            Strategic technical partnership for companies looking to lead their industry through technology.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
-              <p className="text-xs text-accent uppercase tracking-widest font-black mb-2">General Inquiries</p>
-              <p className="text-white font-bold">connect@accenox.com</p>
-            </div>
-            <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
-              <p className="text-xs text-accent uppercase tracking-widest font-black mb-2">Call Our Office</p>
-              <p className="text-white font-bold">+91 7742832770</p>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col items-center text-center max-w-5xl mx-auto relative z-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-[clamp(2.5rem,8vw,6rem)] font-bold text-white mb-12 tracking-tighter leading-[0.95]"
+        >
+          Ready to ignite your engineering department?
+        </motion.h2>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="lg:w-1/2 w-full"
+          transition={{ delay: 0.2 }}
         >
-          <Card className="p-10 md:p-12 bg-white/5 border-white/10 backdrop-blur-xl shadow-2xl">
-            <form className="flex flex-col gap-8" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="flex flex-col gap-3">
-                  <label htmlFor="name" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Full Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="h-14 px-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all font-medium"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div className="flex flex-col gap-3">
-                  <label htmlFor="email" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Work Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="h-14 px-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all font-medium"
-                    placeholder="john@company.com"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-3">
-                <label htmlFor="message" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Your Vision</label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all resize-none font-medium"
-                  placeholder="Describe the challenge you're looking to solve..."
-                ></textarea>
-              </div>
-              <Button type="submit" size="lg" variant="secondary" className="w-full h-16 text-lg tracking-tight">
-                Send Message <ArrowUpRight size={20} className="ml-2" />
-              </Button>
-            </form>
-          </Card>
+          <Button
+            size="xl"
+            variant="secondary"
+            className="rounded-full px-12 py-8 text-xl font-bold bg-white text-black hover:bg-white/90"
+            onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
+          >
+            Schedule a 30 intro call
+          </Button>
         </motion.div>
+
+        <div className="mt-24 grid grid-cols-2 md:grid-cols-5 gap-12 w-full opacity-20 grayscale invert">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="h-10 relative">
+              <Image
+                src={`https://images.unsplash.com/photo-1551288049-bbbda5366991?auto=format&fit=crop&q=80&w=200`}
+                alt="partner"
+                fill
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </SectionWrapper>
   );
