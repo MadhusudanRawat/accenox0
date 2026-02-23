@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
       <nav className="w-full max-w-5xl bg-[#122C38]/60 backdrop-blur-2xl border border-[#DDF7CC]/10 shadow-2xl rounded-full px-2 py-2 flex items-center justify-between pointer-events-auto">
-        <Link href="/" className="pl-6 text-xl font-black tracking-tighter text-[#DDF7CC]">
+        <Link href="/" className="pl-6 text-xl font-black tracking-tighter text-white">
           ACCENOX
         </Link>
 

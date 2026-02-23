@@ -11,58 +11,46 @@ const clients = [
 
 const Hero = () => {
   return (
-    <SectionWrapper className="min-h-screen flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#122C38] relative">
+    <SectionWrapper className="min-h-screen flex items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#122C38] relative">
       {/* Background Glows */}
       <div className="absolute top-1/4 -left-20 w-64 h-64 bg-[#DDF7CC]/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-[#DDF7CC]/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="flex flex-col items-start text-left max-w-full md:max-w-6xl mx-auto">
+      <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="w-full text-[clamp(1.75rem,8vw,6.25rem)] font-bold tracking-tighter text-[#DDF7CC] mb-8 leading-[1.1] md:leading-[1] lg:leading-[0.9] text-balance"
+          className="w-full text-[clamp(2rem,8vw,6.5rem)] font-bold tracking-tight text-white mb-4 leading-[1.1] md:leading-[1] text-balance"
         >
-          We help businesses make <br className="hidden md:inline" /> more revenue with <br className="hidden md:inline" /> strategy-led websites
+          Turn your website into <br className="hidden md:inline" /> <span className="text-[#DDF7CC]">a pipeline engine.</span>
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="text-[clamp(1rem,2.5vw,1.25rem)] text-[#a8c899] mb-12 max-w-3xl leading-relaxed font-normal text-balance"
+          className="max-w-3xl"
         >
-          We design and build websites, landing pages, and marketing assets that drive sales
-          and qualified leads without hiring a full in-house team.
-        </motion.p>
+          <p className="text-[clamp(0.95rem,2vw,1.125rem)] text-white mb-6 leading-relaxed font-normal">
+            Accenox embeds a fractional web team inside your marketing department.
+          </p>
+          <p className="text-[clamp(0.95rem,2vw,1.125rem)] text-white/70 mb-12 leading-relaxed font-normal">
+            Web experts with deep web development and growth strategy, so you can ship high-quality pages fast, improve conversion, and stop losing time to website fires.
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="flex flex-col sm:flex-row gap-4 mb-20"
         >
           <Button
             size="lg"
-            className="h-16 px-10 text-lg rounded-full"
+            className="h-14 px-10 text-lg rounded-full font-bold"
             onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
           >
-            Book an Intro Call
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="h-16 px-10 text-lg rounded-full"
-            onClick={() => {
-              const el = document.getElementById("portfolio");
-              if (el) {
-                el.scrollIntoView({ behavior: "smooth" });
-              } else {
-                window.location.href = "/portfolio";
-              }
-            }}
-          >
-            View Case Studies
+            Book a Strategy Call
           </Button>
         </motion.div>
 
@@ -70,13 +58,13 @@ const Hero = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="flex flex-col gap-6"
+          className="mt-20 pt-12 border-t border-[#DDF7CC]/20 w-full"
         >
-          <p className="text-[#a8c899] text-lg font-medium">
+          <p className="text-[#a8c899] text-sm font-medium mb-6">
             Trusted by 32+ agencies, businesses, and founders worldwide
           </p>
 
-          <div className="relative flex overflow-hidden w-full opacity-50">
+          <div className="relative flex overflow-hidden w-full opacity-60">
             <motion.div
               className="flex whitespace-nowrap gap-12"
               animate={{ x: [0, -1000] }}
@@ -89,7 +77,7 @@ const Hero = () => {
               {[...clients, ...clients].map((client, i) => (
                 <span
                   key={i}
-                  className="text-lg md:text-xl font-bold text-[#DDF7CC]"
+                  className="text-sm md:text-base font-bold text-white"
                 >
                   {client}
                 </span>
