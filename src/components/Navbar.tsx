@@ -10,18 +10,18 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const navLinks = [
-    { name: "About", href: "/#about" },
-    { name: "Services", href: "/#services" },
-    { name: "Solutions", href: "/#solutions" },
-    { name: "Process", href: "/#process" },
-    { name: "Portfolio", href: "/portfolio" },
+    { name: "What We Do", href: "/#services" },
+    { name: "Work", href: "/portfolio" },
+    { name: "Results", href: "/#success" },
+    { name: "Wall of Love", href: "/#testimonials" },
+    { name: "Pricing", href: "/#pricing" },
   ];
 
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
       <nav className="w-full max-w-5xl bg-black/40 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-full px-2 py-2 flex items-center justify-between pointer-events-auto">
-        <Link href="/" className="pl-6 text-xl font-black tracking-tighter text-white">
-          ACCENOX
+        <Link href="/" className="pl-6 text-xl font-black tracking-tighter text-white group">
+          ACCENOX<span className="text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500">.</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -38,13 +38,13 @@ const Navbar = () => {
           <div className="ml-4 pr-1">
             <Button
               size="sm"
-              className="rounded-full px-6 font-bold bg-white text-black hover:bg-white/90 border-none"
+              className="rounded-full px-6 font-bold bg-white text-black hover:bg-white/90 border-none transition-all hover:scale-105 active:scale-95"
               onClick={() => {
                 const el = document.getElementById("contact");
                 el?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Contact Us
+              Book a Strategy Call
             </Button>
           </div>
         </div>
@@ -101,7 +101,7 @@ const Navbar = () => {
                     el?.scrollIntoView({ behavior: "smooth" });
                   }}
                 >
-                  Contact Us
+                  Book a Strategy Call
                 </Button>
               </div>
             </motion.div>

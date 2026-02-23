@@ -1,92 +1,97 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionWrapper } from "@/components/SectionWrapper";
-import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Card } from "@/components/ui/Card";
-import { Rocket, Building2, Globe } from "lucide-react";
+import { Zap, Building2, Globe2 } from "lucide-react";
+
+const solutions = [
+  {
+    title: "Startups",
+    subtitle: "Rapid Velocity",
+    description: "Battle-tested foundations to help you launch fast without accumulating technical debt.",
+    icon: Zap,
+    features: ["MVP Development", "Cloud-Native Scaling", "Product Design"]
+  },
+  {
+    title: "SMEs",
+    subtitle: "Operational Efficiency",
+    description: "Automating manual workflows and integrating legacy systems for modern growth.",
+    icon: Building2,
+    features: ["Process Automation", "CRM Integration", "Custom SaaS"]
+  },
+  {
+    title: "Enterprises",
+    subtitle: "Digital Resilience",
+    description: "Hardened infrastructure and high-availability systems for global operations.",
+    icon: Globe2,
+    features: ["Legacy Migration", "Security Audits", "Custom ERP"]
+  }
+];
 
 const Solutions = () => {
-  const solutions = [
-    {
-      icon: <Rocket className="text-accent" size={32} />,
-      title: "Startups",
-      description: "Fast-track your MVP development and scale with a solid technical foundation that grows with your user base."
-    },
-    {
-      icon: <Building2 className="text-accent" size={32} />,
-      title: "SMEs",
-      description: "Optimize your operations and modernize your legacy systems to stay competitive in an ever-changing digital landscape."
-    },
-    {
-      icon: <Globe className="text-accent" size={32} />,
-      title: "Enterprises",
-      description: "Implement complex, large-scale digital transformations and robust automation solutions that integrate with existing workflows."
-    }
-  ];
-
   return (
-    <SectionWrapper id="solutions" className="bg-primary overflow-hidden">
-      <SectionHeading
-        title="Tailored for Your Ambition"
-        subtitle="We provide specialized expertise for businesses at every stage of their digital journey."
-        centered
-        variant="dark"
-      />
-
-      <div className="flex flex-col gap-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {solutions.slice(0, 2).map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+    <section id="solutions" className="bg-white py-32 px-6 sm:px-12 md:px-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <motion.h2
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              className="text-5xl md:text-7xl font-black tracking-tighter mb-8 text-black"
             >
-              <Card className="h-full bg-white/5 border-white/10 hover:border-accent/30 p-12 text-left flex flex-col group relative overflow-hidden">
-                <div className="absolute -top-12 -right-12 w-48 h-48 bg-accent/10 rounded-full blur-[60px] group-hover:bg-accent/20 transition-colors"></div>
-                <div className="mb-8 p-4 w-fit rounded-2xl bg-white/10 text-accent">
-                  {item.icon}
+              TAILORED <span className="text-accent italic">SOLUTIONS</span>.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-xl text-black/60 font-medium"
+            >
+              Specific technical roadmaps designed for your current scale and future ambitions.
+            </motion.p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {solutions.map((solution, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group relative bg-gray-50 border border-black/5 rounded-[2rem] p-12 hover:bg-black transition-colors duration-500"
+            >
+              <div className="mb-12">
+                <div className="w-16 h-16 rounded-2xl bg-black flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-500">
+                  <solution.icon size={32} className="text-white" />
                 </div>
-                <h3 className="text-3xl font-bold mb-4 text-white">{item.title}</h3>
-                <p className="text-white/60 leading-relaxed text-lg font-medium">
-                  {item.description}
-                </p>
-              </Card>
+                <span className="text-xs font-black text-accent uppercase tracking-widest block mb-2">
+                  {solution.subtitle}
+                </span>
+                <h3 className="text-4xl font-black text-black group-hover:text-white uppercase tracking-tighter transition-colors duration-500">
+                  {solution.title}
+                </h3>
+              </div>
+
+              <p className="text-black/60 group-hover:text-white/60 mb-12 text-lg font-medium leading-relaxed transition-colors duration-500">
+                {solution.description}
+              </p>
+
+              <ul className="space-y-4">
+                {solution.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3 text-black/80 group-hover:text-white/80 font-bold text-sm transition-colors duration-500">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
-
-        {solutions.slice(2).map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="bg-white/5 border-white/10 hover:border-accent/30 p-12 text-left flex flex-col md:flex-row items-center gap-12 group relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,var(--color-accent)_0%,transparent_60%)] opacity-5 group-hover:opacity-10 transition-opacity"></div>
-              <div className="md:w-1/2 relative z-10">
-                <div className="mb-8 p-4 w-fit rounded-2xl bg-white/10 text-accent">
-                  {item.icon}
-                </div>
-                <h3 className="text-4xl font-bold mb-4 text-white">{item.title}</h3>
-                <p className="text-white/60 leading-relaxed text-xl font-medium">
-                  {item.description}
-                </p>
-              </div>
-              <div className="md:w-1/2 flex justify-center relative z-10">
-                 <div className="w-full h-64 border border-white/10 rounded-3xl bg-white/5 flex items-center justify-center backdrop-blur-sm">
-                    <div className="text-white/20 font-bold text-6xl tracking-tighter uppercase italic">Enterprise</div>
-                 </div>
-              </div>
-            </Card>
-          </motion.div>
-        ))}
       </div>
-    </SectionWrapper>
+    </section>
   );
 };
 

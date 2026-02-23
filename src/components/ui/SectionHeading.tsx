@@ -20,23 +20,23 @@ const SectionHeading = ({
 }: SectionHeadingProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className={cn("mb-12", centered && "text-center", className)}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={cn("mb-16 md:mb-24", centered && "text-center", className)}
     >
       <h2 className={cn(
-        "text-3xl md:text-5xl font-bold mb-4 tracking-tight",
+        "text-[clamp(2.5rem,6vw,5rem)] font-bold mb-8 tracking-tighter leading-[0.95]",
         variant === "light" ? "text-primary" : "text-white"
       )}>
         {title}
       </h2>
       {subtitle && (
         <p className={cn(
-          "text-lg max-w-2xl",
+          "text-xl md:text-2xl max-w-4xl font-medium leading-relaxed",
           centered && "mx-auto",
-          variant === "light" ? "text-muted" : "text-white/70"
+          variant === "light" ? "text-muted" : "text-muted"
         )}>
           {subtitle}
         </p>
