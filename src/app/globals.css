@@ -1,14 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #020617;
-  --color-secondary: #F8FAFC;
-  --color-accent: #06B6D4;
-  --color-muted: #64748B;
-  --color-border: #E2E8F0;
+  --color-primary: #122C38;
+  --color-primary-light: #1a3f52;
+  --color-text: #DDF7CC;
+  --color-text-dark: #a8c899;
+  --color-text-muted: #7a9a6f;
+  --color-border: rgba(221, 247, 204, 0.1);
+  --color-accent: #DDF7CC;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 
   --radius-4xl: 2rem;
   --radius-5xl: 3rem;
@@ -20,17 +24,19 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0A192F;
+  --background: #122C38;
+  --foreground: #DDF7CC;
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 }
 
 * {

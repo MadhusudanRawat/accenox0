@@ -11,17 +11,17 @@ const clients = [
 
 const Hero = () => {
   return (
-    <SectionWrapper className="min-h-screen flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-black relative">
+    <SectionWrapper className="min-h-screen flex items-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#122C38] relative">
       {/* Background Glows */}
-      <div className="absolute top-1/4 -left-20 w-64 h-64 bg-green-500/20 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-green-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/4 -left-20 w-64 h-64 bg-[#DDF7CC]/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-[#DDF7CC]/5 rounded-full blur-[120px] pointer-events-none"></div>
 
       <div className="flex flex-col items-start text-left max-w-full md:max-w-6xl mx-auto">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="w-full text-[clamp(1.75rem,8vw,6.25rem)] font-bold tracking-tighter text-white mb-8 leading-[1.1] md:leading-[1] lg:leading-[0.9] text-balance"
+          className="w-full text-[clamp(1.75rem,8vw,6.25rem)] font-bold tracking-tighter text-[#DDF7CC] mb-8 leading-[1.1] md:leading-[1] lg:leading-[0.9] text-balance"
         >
           We help businesses make <br className="hidden md:inline" /> more revenue with <br className="hidden md:inline" /> strategy-led websites
         </motion.h1>
@@ -30,7 +30,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.215, 0.61, 0.355, 1.0] }}
-          className="text-[clamp(1rem,2.5vw,1.25rem)] text-white/70 mb-12 max-w-3xl leading-relaxed font-normal text-balance"
+          className="text-[clamp(1rem,2.5vw,1.25rem)] text-[#a8c899] mb-12 max-w-3xl leading-relaxed font-normal text-balance"
         >
           We design and build websites, landing pages, and marketing assets that drive sales
           and qualified leads without hiring a full in-house team.
@@ -44,7 +44,7 @@ const Hero = () => {
         >
           <Button
             size="lg"
-            className="h-16 px-10 text-lg rounded-full font-bold bg-[#22c55e] hover:bg-[#16a34a] text-black border-none"
+            className="h-16 px-10 text-lg rounded-full"
             onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
           >
             Book an Intro Call
@@ -52,7 +52,7 @@ const Hero = () => {
           <Button
             size="lg"
             variant="outline"
-            className="h-16 px-10 text-lg rounded-full font-bold border-white/20 bg-white/5 text-white hover:bg-white/10"
+            className="h-16 px-10 text-lg rounded-full"
             onClick={() => {
               const el = document.getElementById("portfolio");
               if (el) {
@@ -72,7 +72,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="flex flex-col gap-6"
         >
-          <p className="text-white/60 text-lg font-medium">
+          <p className="text-[#a8c899] text-lg font-medium">
             Trusted by 32+ agencies, businesses, and founders worldwide
           </p>
 
@@ -89,14 +89,14 @@ const Hero = () => {
               {[...clients, ...clients].map((client, i) => (
                 <span
                   key={i}
-                  className="text-lg md:text-xl font-bold text-white"
+                  className="text-lg md:text-xl font-bold text-[#DDF7CC]"
                 >
                   {client}
                 </span>
               ))}
             </motion.div>
-            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-black to-transparent z-10"></div>
-            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-black to-transparent z-10"></div>
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#122C38] to-transparent z-10"></div>
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#122C38] to-transparent z-10"></div>
           </div>
         </motion.div>
       </div>

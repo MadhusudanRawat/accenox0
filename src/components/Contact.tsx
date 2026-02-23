@@ -8,9 +8,9 @@ import { ArrowUpRight } from "lucide-react";
 
 const Contact = () => {
   return (
-    <SectionWrapper id="contact" className="bg-primary overflow-hidden relative">
+    <SectionWrapper id="contact" className="bg-[#122C38] overflow-hidden relative">
       {/* Decorative background elements */}
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[radial-gradient(circle_at_center,var(--color-accent)_0%,transparent_70%)] opacity-10 blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-[radial-gradient(circle_at_center,#DDF7CC_0%,transparent_70%)] opacity-10 blur-[100px] pointer-events-none"></div>
 
       <div className="flex flex-col lg:flex-row gap-20 relative z-10 items-center">
         <div className="lg:w-1/2">
@@ -18,22 +18,22 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-6xl md:text-8xl font-bold text-white mb-8 tracking-tighter leading-none"
+            className="text-6xl md:text-8xl font-bold text-[#DDF7CC] mb-8 tracking-tighter leading-none"
           >
-            Let&apos;s build <br /><span className="text-accent italic">something</span> great.
+            Let&apos;s build <br /><span className="text-[#a8c899] italic">something</span> great.
           </motion.h2>
-          <p className="text-white/60 text-xl mb-12 max-w-lg font-medium">
+          <p className="text-[#a8c899] text-xl mb-12 max-w-lg font-medium">
             Strategic technical partnership for companies looking to lead their industry through technology.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
-              <p className="text-xs text-accent uppercase tracking-widest font-black mb-2">General Inquiries</p>
-              <p className="text-white font-bold">connect@accenox.com</p>
+            <div className="p-6 rounded-3xl bg-[#DDF7CC]/5 border border-[#DDF7CC]/10">
+              <p className="text-xs text-[#DDF7CC] uppercase tracking-widest font-black mb-2">General Inquiries</p>
+              <p className="text-[#DDF7CC] font-bold">connect@accenox.com</p>
             </div>
-            <div className="p-6 rounded-3xl bg-white/5 border border-white/10">
-              <p className="text-xs text-accent uppercase tracking-widest font-black mb-2">Call Our Office</p>
-              <p className="text-white font-bold">+91 7742832770</p>
+            <div className="p-6 rounded-3xl bg-[#DDF7CC]/5 border border-[#DDF7CC]/10">
+              <p className="text-xs text-[#DDF7CC] uppercase tracking-widest font-black mb-2">Call Our Office</p>
+              <p className="text-[#DDF7CC] font-bold">+91 7742832770</p>
             </div>
           </div>
         </div>
@@ -45,39 +45,39 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="lg:w-1/2 w-full"
         >
-          <Card className="p-10 md:p-12 bg-white/5 border-white/10 backdrop-blur-xl shadow-2xl">
+          <Card className="p-10 md:p-12 bg-[#DDF7CC]/5 border-[#DDF7CC]/10 backdrop-blur-xl shadow-2xl">
             <form className="flex flex-col gap-8" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-3">
-                  <label htmlFor="name" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Full Name</label>
+                  <label htmlFor="name" className="text-xs font-black uppercase tracking-[0.2em] text-[#DDF7CC]/40">Full Name</label>
                   <input
                     type="text"
                     id="name"
-                    className="h-14 px-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all font-medium"
+                    className="h-14 px-6 rounded-2xl bg-[#DDF7CC]/5 border border-[#DDF7CC]/10 text-[#DDF7CC] focus:outline-none focus:border-[#DDF7CC]/50 focus:bg-[#DDF7CC]/10 transition-all font-medium"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <label htmlFor="email" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Work Email</label>
+                  <label htmlFor="email" className="text-xs font-black uppercase tracking-[0.2em] text-[#DDF7CC]/40">Work Email</label>
                   <input
                     type="email"
                     id="email"
-                    className="h-14 px-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all font-medium"
+                    className="h-14 px-6 rounded-2xl bg-[#DDF7CC]/5 border border-[#DDF7CC]/10 text-[#DDF7CC] focus:outline-none focus:border-[#DDF7CC]/50 focus:bg-[#DDF7CC]/10 transition-all font-medium"
                     placeholder="john@company.com"
                   />
                 </div>
               </div>
 
               <div className="flex flex-col gap-3">
-                <label htmlFor="message" className="text-xs font-black uppercase tracking-[0.2em] text-white/40">Your Vision</label>
+                <label htmlFor="message" className="text-xs font-black uppercase tracking-[0.2em] text-[#DDF7CC]/40">Your Vision</label>
                 <textarea
                   id="message"
                   rows={4}
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 text-white focus:outline-none focus:border-accent/50 focus:bg-white/10 transition-all resize-none font-medium"
+                  className="p-6 rounded-2xl bg-[#DDF7CC]/5 border border-[#DDF7CC]/10 text-[#DDF7CC] focus:outline-none focus:border-[#DDF7CC]/50 focus:bg-[#DDF7CC]/10 transition-all resize-none font-medium"
                   placeholder="Describe the challenge you're looking to solve..."
                 ></textarea>
               </div>
-              <Button type="submit" size="lg" variant="secondary" className="w-full h-16 text-lg tracking-tight">
+              <Button type="submit" size="lg" variant="primary" className="w-full h-16 text-lg tracking-tight">
                 Send Message <ArrowUpRight size={20} className="ml-2" />
               </Button>
             </form>

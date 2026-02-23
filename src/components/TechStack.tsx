@@ -19,9 +19,9 @@ const technologies = [
 
 const TechStack = () => {
   return (
-    <div className="py-20 bg-white border-y border-border/40 overflow-hidden">
+    <div className="py-20 bg-[#122C38] border-y border-[#DDF7CC]/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12">
-        <h2 className="text-center text-sm font-bold uppercase tracking-[0.2em] text-muted">
+        <h2 className="text-center text-sm font-bold uppercase tracking-[0.2em] text-[#a8c899]">
           Our Tech Stack
         </h2>
       </div>
@@ -42,7 +42,7 @@ const TechStack = () => {
           {[...technologies, ...technologies].map((tech, index) => (
             <div
               key={index}
-              className="text-4xl md:text-5xl font-extrabold text-primary/10 hover:text-accent/40 transition-colors cursor-default select-none tracking-tighter"
+              className="text-4xl md:text-5xl font-extrabold text-[#DDF7CC]/10 hover:text-[#DDF7CC]/40 transition-colors cursor-default select-none tracking-tighter"
             >
               {tech}
             </div>
