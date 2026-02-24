@@ -58,3 +58,22 @@ body {
     animation-play-state: paused;
   }
 }
+
+/* Hero background grid pattern */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(221,247,204,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221,247,204,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(221,247,204,0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(221,247,204,0.01) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+  opacity: 0.18;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.hero-heading-highlight {
+  color: var(--color-accent);
+}

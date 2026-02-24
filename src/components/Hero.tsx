@@ -12,6 +12,8 @@ const clients = [
 const Hero = () => {
   return (
     <SectionWrapper className="min-h-screen flex items-center justify-center pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-[#122C38] relative">
+      {/* Grid background */}
+      <div className="hero-grid"></div>
       {/* Background Glows */}
       <div className="absolute top-1/4 -left-20 w-64 h-64 bg-[#DDF7CC]/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 -right-20 w-64 h-64 bg-[#DDF7CC]/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -23,7 +25,7 @@ const Hero = () => {
           transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1.0] }}
           className="w-full text-[clamp(2rem,8vw,6.5rem)] font-bold tracking-tight text-white mb-4 leading-[1.1] md:leading-[1] text-balance"
         >
-          Turn your website into <br className="hidden md:inline" /> <span className="text-[#DDF7CC]">a pipeline engine.</span>
+          Turn your website into <br className="hidden md:inline" /> <span className="hero-heading-highlight">a pipeline engine.</span>
         </motion.h1>
 
         <motion.div
@@ -47,10 +49,16 @@ const Hero = () => {
         >
           <Button
             size="lg"
-            className="h-14 px-10 text-lg rounded-full font-bold"
+            className="h-14 px-10 text-lg rounded-full font-bold flex items-center"
             onClick={() => window.open("https://cal.com/madhusudan-rawat", "_blank")}
           >
-            Book a Strategy Call
+            <span>Book a Strategy Call</span>
+            <span className="ml-3 inline-flex" aria-hidden>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12h14" stroke="#122C38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M13 6l6 6-6 6" stroke="#122C38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
           </Button>
         </motion.div>
 
