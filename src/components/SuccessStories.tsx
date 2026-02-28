@@ -29,7 +29,7 @@ const SuccessStories = () => {
   ];
 
   return (
-    <SectionWrapper id="success" className="bg-[#122C38]">
+    <SectionWrapper id="success" className="bg-[#000000]">
       <SectionHeading
         title="Impact"
         subtitle="Tangible results delivered through technical excellence and strategic automation."
@@ -45,18 +45,18 @@ const SuccessStories = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: index * 0.15 }}
           >
-            <Card className="h-full flex flex-col p-10 bg-[#1a3f52] border-[#DDF7CC]/10 hover:bg-[#1a3f52] hover:shadow-2xl hover:shadow-[#DDF7CC]/10 transition-all duration-500">
-              <div className="inline-flex items-center gap-2 text-[#DDF7CC] font-bold text-xs uppercase tracking-widest mb-6">
+            <Card className="h-full flex flex-col p-10 bg-white/5 border-white/10 hover:bg-white/[0.08] hover:shadow-2xl hover:shadow-[#00A3FF]/10 transition-all duration-500">
+              <div className="inline-flex items-center gap-2 text-[#00A3FF] font-bold text-xs uppercase tracking-widest mb-6">
                 <BadgeCheck size={16} />
                 {item.result}
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-[#DDF7CC]">{item.company}</h3>
-              <p className="text-[#a8c899]/80 leading-relaxed mb-10 flex-1 font-medium italic text-lg">
+              <h3 className="text-2xl font-bold mb-4 text-white font-serif">{item.company}</h3>
+              <p className="text-white/60 leading-relaxed mb-10 flex-1 font-medium italic text-lg">
                 &quot;{item.description}&quot;
               </p>
               <div className="flex flex-wrap gap-2 mt-auto">
                 {item.tags.map(tag => (
-                  <span key={tag} className="px-4 py-1.5 bg-[#DDF7CC]/5 text-[#DDF7CC] text-[10px] uppercase tracking-[0.2em] font-black rounded-full border border-[#DDF7CC]/10">
+                  <span key={tag} className="px-4 py-1.5 bg-white/5 text-white/40 text-[10px] uppercase tracking-[0.2em] font-black rounded-full border border-white/10">
                     {tag}
                   </span>
                 ))}

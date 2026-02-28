@@ -19,8 +19,8 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-6 pointer-events-none">
-      <nav className="w-full max-w-5xl bg-[#122C38]/60 backdrop-blur-2xl border border-[#DDF7CC]/10 shadow-2xl rounded-full px-2 py-2 flex items-center justify-between pointer-events-auto">
-        <Link href="/" className="pl-6 text-xl font-black tracking-tighter text-white">
+      <nav className="w-full max-w-5xl bg-black/60 backdrop-blur-2xl border border-white/10 shadow-2xl rounded-full px-2 py-2 flex items-center justify-between pointer-events-auto">
+        <Link href="/" className="pl-6 text-xl font-bold tracking-tighter text-white">
           ACCENOX
         </Link>
 
@@ -30,7 +30,7 @@ const Navbar = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="px-5 py-2 text-[13px] font-bold text-[#DDF7CC]/50 hover:text-[#DDF7CC] rounded-full hover:bg-[#DDF7CC]/5 transition-all"
+              className="px-5 py-2 text-[13px] font-bold text-white/50 hover:text-white rounded-full hover:bg-white/5 transition-all"
             >
               {link.name}
             </Link>
@@ -52,7 +52,7 @@ const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <div className="md:hidden pr-2">
           <button
-            className="w-10 h-10 flex items-center justify-center text-[#DDF7CC] hover:bg-[#DDF7CC]/5 rounded-full transition-colors"
+            className="w-10 h-10 flex items-center justify-center text-white hover:bg-white/5 rounded-full transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
@@ -71,13 +71,13 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-[#122C38]/30 backdrop-blur-sm z-[-1] pointer-events-auto md:hidden"
+              className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[-1] pointer-events-auto md:hidden"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -20 }}
-              className="absolute top-20 left-6 right-6 md:hidden bg-[#122C38]/95 backdrop-blur-3xl border border-[#DDF7CC]/10 shadow-2xl rounded-[2.5rem] overflow-hidden pointer-events-auto"
+              className="absolute top-20 left-6 right-6 md:hidden bg-black/95 backdrop-blur-3xl border border-white/10 shadow-2xl rounded-[2.5rem] overflow-hidden pointer-events-auto"
             >
               <div className="p-10 flex flex-col gap-8">
                 <div className="flex flex-col gap-4">
@@ -85,14 +85,14 @@ const Navbar = () => {
                     <Link
                       key={link.name}
                       href={link.href}
-                      className="text-3xl font-bold text-[#DDF7CC] tracking-tighter hover:translate-x-2 transition-transform"
+                      className="text-3xl font-bold text-white tracking-tighter hover:translate-x-2 transition-transform"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}
                     </Link>
                   ))}
                 </div>
-                <div className="h-px bg-[#DDF7CC]/10 w-full" />
+                <div className="h-px bg-white/10 w-full" />
                 <Button
                   className="w-full py-8 text-xl rounded-2xl"
                   onClick={() => {
