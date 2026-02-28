@@ -27,8 +27,8 @@ const SectionHeading = ({
       className={cn("mb-12", centered && "text-center", className)}
     >
       <h2 className={cn(
-        "text-3xl md:text-5xl font-bold mb-4 tracking-tight",
-        variant === "light" ? "text-[#DDF7CC]" : "text-[#DDF7CC]"
+        "text-3xl md:text-5xl font-bold mb-4 tracking-tight font-serif",
+        variant === "light" ? "text-white" : "text-white"
       )}>
         {title}
       </h2>
@@ -36,7 +36,7 @@ const SectionHeading = ({
         <p className={cn(
           "text-lg max-w-2xl",
           centered && "mx-auto",
-          variant === "light" ? "text-[#a8c899]" : "text-[#a8c899]"
+          variant === "light" ? "text-white/60" : "text-white/60"
         )}>
           {subtitle}
         </p>

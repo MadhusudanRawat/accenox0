@@ -25,7 +25,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <SectionWrapper id="testimonials" className="bg-[#122C38]">
+    <SectionWrapper id="testimonials" className="bg-[#000000]">
       <SectionHeading
         title="Trusted by Leaders"
         subtitle="Don't just take our word for it. Here's what our partners have to say."
@@ -42,14 +42,14 @@ const Testimonials = () => {
             transition={{ duration: 0.8, delay: index * 0.2 }}
             className="relative"
           >
-            <Quote className="absolute -top-8 -left-4 md:-top-10 md:-left-6 text-[#DDF7CC]/20 w-12 h-12 md:w-20 md:h-20" />
+            <Quote className="absolute -top-8 -left-4 md:-top-10 md:-left-6 text-white/5 w-12 h-12 md:w-20 md:h-20" />
             <div className="relative z-10">
-              <p className="text-xl italic text-[#DDF7CC] leading-relaxed mb-8">
+              <p className="text-xl italic text-white/80 leading-relaxed mb-8">
                 &quot;{item.quote}&quot;
               </p>
               <div>
-                <h4 className="font-bold text-[#DDF7CC]">{item.author}</h4>
-                <p className="text-[#a8c899] text-sm">{item.role}</p>
+                <h4 className="font-bold text-white font-serif">{item.author}</h4>
+                <p className="text-white/40 text-sm">{item.role}</p>
               </div>
             </div>
           </motion.div>

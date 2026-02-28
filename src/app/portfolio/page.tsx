@@ -30,7 +30,7 @@ const projects = [
     id: 2,
     title: "Corporate Pulse",
     category: "wordpress",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     link: "#",
     description: "Enterprise-grade multi-site WordPress architecture."
   },
@@ -92,7 +92,7 @@ export default function PortfolioPage() {
     : projects.filter(p => p.category === activeCategory);
 
   return (
-    <main className="min-h-screen bg-[#122C38] pt-32 pb-24">
+    <main className="min-h-screen bg-[#000000] pt-32 pb-24">
       <SectionWrapper>
         <div className="mb-16">
           <motion.div
@@ -100,15 +100,15 @@ export default function PortfolioPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DDF7CC] text-[#122C38] text-[10px] font-bold uppercase tracking-widest mb-6">
-              <span className="w-1 h-1 rounded-full bg-[#122C38] animate-pulse"></span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00A3FF] text-white text-[10px] font-bold uppercase tracking-widest mb-6">
+              <span className="w-1 h-1 rounded-full bg-white animate-pulse"></span>
               Portfolio
-              <span className="w-1 h-1 rounded-full bg-[#122C38] animate-pulse"></span>
+              <span className="w-1 h-1 rounded-full bg-white animate-pulse"></span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black text-[#DDF7CC] tracking-tighter mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6 font-serif">
               Selected Works.
             </h1>
-            <p className="text-xl text-[#a8c899] font-medium max-w-2xl">
+            <p className="text-xl text-white/60 font-medium max-w-2xl">
               A showcase of our engineering excellence across diverse technologies and industries.
             </p>
           </motion.div>
@@ -118,7 +118,7 @@ export default function PortfolioPage() {
           {/* Sidebar Navigation */}
           <aside className="lg:w-64 shrink-0">
             <div className="lg:sticky lg:top-32 flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 no-scrollbar">
-              <h3 className="hidden lg:block text-[11px] font-black uppercase tracking-[0.2em] text-[#DDF7CC]/30 mb-4 ml-4\">Technologies</h3>
+              <h3 className="hidden lg:block text-[11px] font-black uppercase tracking-[0.2em] text-white/30 mb-4 ml-4">Technologies</h3>
               {categories.map((cat) => (
                 <button
                   key={cat.id}
@@ -126,13 +126,13 @@ export default function PortfolioPage() {
                   className={cn(
                     "flex items-center gap-4 px-6 py-4 rounded-2xl font-bold transition-all text-left group whitespace-nowrap lg:whitespace-normal",
                     activeCategory === cat.id
-                      ? "bg-[#DDF7CC] text-[#122C38] shadow-xl shadow-[#DDF7CC]/20 scale-105"
-                      : "text-[#DDF7CC]/50 hover:bg-[#DDF7CC]/[0.03] hover:text-[#DDF7CC] bg-[#1a3f52] lg:bg-transparent"
+                      ? "bg-[#00A3FF] text-white shadow-xl shadow-[#00A3FF]/20 scale-105"
+                      : "text-white/50 hover:bg-white/[0.03] hover:text-white bg-white/5 lg:bg-transparent"
                   )}
                 >
                   <span className={cn(
                     "transition-transform duration-300",
-                    activeCategory === cat.id ? "text-[#122C38]" : "group-hover:scale-110"
+                    activeCategory === cat.id ? "text-white" : "group-hover:scale-110"
                   )}>
                     {cat.icon}
                   </span>
@@ -158,7 +158,7 @@ export default function PortfolioPage() {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <Card className="group p-0 overflow-hidden border-none shadow-none bg-[#1a3f52] hover:bg-[#1a3f52] transition-colors">
+                    <Card className="group p-0 overflow-hidden border-none shadow-none bg-white/5 hover:bg-white/[0.08] transition-colors border border-white/10">
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <Image
                           src={project.image}
@@ -166,25 +166,25 @@ export default function PortfolioPage() {
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-[#122C38]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
                           <a
                             href={project.link}
-                            className="w-14 h-14 bg-[#DDF7CC] rounded-full flex items-center justify-center text-[#122C38] transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 hover:bg-[#c7e6b5] hover:text-[#122C38]"
+                            className="w-14 h-14 bg-[#00A3FF] rounded-full flex items-center justify-center text-white transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 hover:bg-[#0082CC] hover:scale-110"
                           >
                             <ArrowUpRight size={24} />
                           </a>
                         </div>
                         <div className="absolute top-4 left-4">
-                          <span className="px-3 py-1 bg-[#DDF7CC]/90 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-[#122C38]">
+                          <span className="px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-white border border-white/10">
                             {project.category}
                           </span>
                         </div>
                       </div>
                       <div className="p-8">
-                        <h3 className="text-2xl font-black tracking-tight mb-3 text-[#DDF7CC] group-hover:text-[#c7e6b5] transition-colors">
+                        <h3 className="text-2xl font-bold tracking-tight mb-3 text-white group-hover:text-[#00A3FF] transition-colors font-serif">
                           {project.title}
                         </h3>
-                        <p className="text-[#a8c899] font-medium text-sm leading-relaxed">
+                        <p className="text-white/60 font-medium text-sm leading-relaxed">
                           {project.description}
                         </p>
                       </div>
@@ -196,11 +196,11 @@ export default function PortfolioPage() {
 
             {filteredProjects.length === 0 && (
               <div className="h-96 flex flex-col items-center justify-center text-center">
-                <div className="w-16 h-16 bg-[#1a3f52] rounded-full flex items-center justify-center text-[#DDF7CC]/60 mb-4">
+                <div className="w-16 h-16 bg-white/5 rounded-full flex items-center justify-center text-white/40 mb-4">
                   <Globe size={32} />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-[#DDF7CC]">No projects found</h3>
-                <p className="text-[#a8c899]">Stay tuned! We are constantly updating our portfolio.</p>
+                <h3 className="text-xl font-bold mb-2 text-white">No projects found</h3>
+                <p className="text-white/60">Stay tuned! We are constantly updating our portfolio.</p>
               </div>
             )}
           </div>
